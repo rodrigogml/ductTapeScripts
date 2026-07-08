@@ -14,13 +14,6 @@ A proposta é manter cada solução pequena, direta e bem documentada. Quando um
   - Manual de uso: passo a passo detalhado de como utilizar.
   - Informações adicionais: observações, limitações, dependências, exemplos e qualquer outro tópico necessário.
 
-## network-access-control
-
-Script para administrar regras de acesso à rede por usuário Linux, com foco inicial em bloquear e liberar tráfego para casos como o `wildfly`.
-O objetivo é permitir operações rápidas de bloqueio, liberação e auditoria de regras com base em usuário, e evoluir depois para serviço, processo e filtros mais finos.
-
-- README interno: [network-access-control/README.md](network-access-control/README.md)
-
 ## template-script
 
 Modelo inicial de estrutura para novos scripts deste repositório.
