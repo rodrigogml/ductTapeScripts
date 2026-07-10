@@ -306,10 +306,11 @@ def run_job(
 
 def format_report(domain: str, checks: list[CheckResult], ok: bool) -> str:
     status = "OK" if ok else "FAIL"
-    parts = [f"{domain} {status}"]
+    parts = [f"{domain} {status}", "checks:"]
     for item in checks:
-        parts.append(f"{item.label} {item.detail}")
-    return " | ".join(parts)
+        mark = "ok" if item.ok else "fail"
+        parts.append(f"- {item.label}: {mark} ({item.detail})")
+    return "\n".join(parts)
 
 
 def render_template(template: str, values: dict[str, Any]) -> str:

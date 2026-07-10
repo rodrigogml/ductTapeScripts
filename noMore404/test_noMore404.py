@@ -35,7 +35,7 @@ class NoMore404Tests(unittest.TestCase):
         self.assertEqual(merged["notify"]["error"]["recipient"], "job-alerts")
         self.assertEqual(merged["notify"]["success"]["channel"], "telegram")
 
-    def test_format_report_is_concise(self) -> None:
+    def test_format_report_is_multiline(self) -> None:
         checks = [
             MODULE.CheckResult("200", True, "ok"),
             MODULE.CheckResult("index", False, "fail 1800ms>1500ms"),
@@ -45,7 +45,7 @@ class NoMore404Tests(unittest.TestCase):
 
         self.assertEqual(
             report,
-            "example.com FAIL | 200 ok | index fail 1800ms>1500ms",
+            "example.com FAIL\nchecks:\n- 200: ok (ok)\n- index: fail (fail 1800ms>1500ms)",
         )
 
     def test_build_notification_command_omits_config_when_not_set(self) -> None:
@@ -60,7 +60,7 @@ class NoMore404Tests(unittest.TestCase):
                 "title": "{domain} {status}",
                 "message": "{report}",
             },
-            report="example.com OK | 200 ok",
+            report="example.com OK\nchecks:\n- 200: ok (ok)",
             domain="example.com",
             status="OK",
         )
@@ -79,7 +79,7 @@ class NoMore404Tests(unittest.TestCase):
                 "--title",
                 "example.com OK",
                 "--message",
-                "example.com OK | 200 ok",
+                "example.com OK\nchecks:\n- 200: ok (ok)",
             ],
         )
 
@@ -96,7 +96,7 @@ class NoMore404Tests(unittest.TestCase):
                 "title": "{domain} {status}",
                 "message": "{report}",
             },
-            report="example.com OK | 200 ok",
+            report="example.com OK\nchecks:\n- 200: ok (ok)",
             domain="example.com",
             status="OK",
         )
@@ -117,7 +117,7 @@ class NoMore404Tests(unittest.TestCase):
                 "--title",
                 "example.com OK",
                 "--message",
-                "example.com OK | 200 ok",
+                "example.com OK\nchecks:\n- 200: ok (ok)",
             ],
         )
 
