@@ -16,8 +16,8 @@ channel = "telegram"
 title = "{domain} FAIL"
 message = "{report}"
 
-[jobs."xpto.com.br"]
-primary_domain = "xpto.com.br"
+[jobs."assurity.com.br"]
+primary_domain = "assurity.com.br"
 path = "/"
 http_scheme = "https"
 http_timeout_ms = 5000
@@ -27,26 +27,319 @@ check_http_to_https = true
 check_index_time = true
 check_redirects = true
 
-[jobs."xpto.com.br".notify.success]
+[jobs."assurity.com.br".notify.success]
 recipient = "ops-web"
 channel = "telegram"
 title = "{domain} OK"
 message = "{report}"
 
-[jobs."xpto.com.br".notify.error]
+[jobs."assurity.com.br".notify.error]
 recipient = "ops-web-alerts"
 channel = "telegram"
 title = "{domain} FAIL"
 message = "{report}"
 
-[[jobs."xpto.com.br".redirects]]
-source = "www.xpto.com.br"
-target = "xpto.com.br"
+[[jobs."assurity.com.br".redirects]]
+source = "www.assurity.com.br"
+target = "assurity.com.br"
 source_scheme = "http"
 target_scheme = "https"
 
-[[jobs."xpto.com.br".redirects]]
-source = "www.xpto.com.br"
-target = "xpto.com.br"
+[[jobs."assurity.com.br".redirects]]
+source = "www.assurity.com.br"
+target = "assurity.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."eRacers.com.br"]
+primary_domain = "eracers.com.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."eRacers.com.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."eRacers.com.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."eRacers.com.br".redirects]]
+source = "www.eracers.com.br"
+target = "eracers.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."eRacers.com.br".redirects]]
+source = "www.eracers.com.br"
+target = "eracers.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."laizagalvan.eng.br"]
+primary_domain = "laizagalvan.eng.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."laizagalvan.eng.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."laizagalvan.eng.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."laizagalvan.eng.br".redirects]]
+source = "www.laizagalvan.eng.br"
+target = "laizagalvan.eng.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laizagalvan.eng.br".redirects]]
+source = "www.laizagalvan.eng.br"
+target = "laizagalvan.eng.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."laveli.com.br"]
+primary_domain = "laveli.com.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."laveli.com.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."laveli.com.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."laveli.com.br".redirects]]
+source = "www.laveli.com.br"
+target = "laveli.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "www.laveli.com.br"
+target = "laveli.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliconstrutora.com.br"
+target = "laveli.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliconstrutora.com.br"
+target = "laveli.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveli.eng.br"
+target = "laveli.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveli.eng.br"
+target = "laveli.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliengenharia.com.br"
+target = "laveli.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliengenharia.com.br"
+target = "laveli.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliincorporadora.com.br"
+target = "laveli.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."laveli.com.br".redirects]]
+source = "laveliincorporadora.com.br"
+target = "laveli.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."rodrigogml.eng.br"]
+primary_domain = "rodrigogml.eng.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."rodrigogml.eng.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."rodrigogml.eng.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."rodrigogml.eng.br".redirects]]
+source = "www.rodrigogml.eng.br"
+target = "rodrigogml.eng.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."rodrigogml.eng.br".redirects]]
+source = "www.rodrigogml.eng.br"
+target = "rodrigogml.eng.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."rogerio.adv.br"]
+primary_domain = "rogerio.adv.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."rogerio.adv.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."rogerio.adv.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."rogerio.adv.br".redirects]]
+source = "www.rogerio.adv.br"
+target = "rogerio.adv.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."rogerio.adv.br".redirects]]
+source = "www.rogerio.adv.br"
+target = "rogerio.adv.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."talori.com.br"]
+primary_domain = "talori.com.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."talori.com.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."talori.com.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."talori.com.br".redirects]]
+source = "www.talori.com.br"
+target = "talori.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."talori.com.br".redirects]]
+source = "www.talori.com.br"
+target = "talori.com.br"
+source_scheme = "https"
+target_scheme = "https"
+
+[jobs."bertolinoevargas.adv.br"]
+primary_domain = "www.bertolinoevargas.adv.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."bertolinoevargas.adv.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."bertolinoevargas.adv.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."bertolinoevargas.adv.br".redirects]]
+source = "bertolinoevargas.adv.br"
+target = "www.bertolinoevargas.adv.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."bertolinoevargas.adv.br".redirects]]
+source = "bertolinoevargas.adv.br"
+target = "www.bertolinoevargas.adv.br"
 source_scheme = "https"
 target_scheme = "https"
