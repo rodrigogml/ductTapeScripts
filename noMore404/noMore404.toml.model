@@ -1,0 +1,52 @@
+[global]
+noticli_bin = "noticli"
+sender = "noMore404"
+http_timeout_ms = 5000
+user_agent = "noMore404/1.0"
+
+[global.notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[global.notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[jobs."xpto.com.br"]
+primary_domain = "xpto.com.br"
+path = "/"
+http_scheme = "https"
+http_timeout_ms = 5000
+index_max_ms = 1500
+check_http_200 = true
+check_http_to_https = true
+check_index_time = true
+check_redirects = true
+
+[jobs."xpto.com.br".notify.success]
+recipient = "ops-web"
+channel = "telegram"
+title = "{domain} OK"
+message = "{report}"
+
+[jobs."xpto.com.br".notify.error]
+recipient = "ops-web-alerts"
+channel = "telegram"
+title = "{domain} FAIL"
+message = "{report}"
+
+[[jobs."xpto.com.br".redirects]]
+source = "www.xpto.com.br"
+target = "xpto.com.br"
+source_scheme = "http"
+target_scheme = "https"
+
+[[jobs."xpto.com.br".redirects]]
+source = "www.xpto.com.br"
+target = "xpto.com.br"
+source_scheme = "https"
+target_scheme = "https"

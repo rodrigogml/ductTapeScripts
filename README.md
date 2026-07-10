@@ -21,6 +21,12 @@ Serve como referência de organização e documentação para futuras pastas de 
 
 - README interno: [template-script/README.md](template-script/README.md)
 
+## noMore404
+
+Miniapp para checar disponibilidade, respostas HTTP, redirects e tempo de carga de websites por domínio, com notificação via NotiCLI.
+
+- README interno: [noMore404/README.md](noMore404/README.md)
+
 ## wildflyNetworkQuarantine
 
 Mini-projeto para isolar o tráfego de saída do `wildfly` e forçar o BIS2 a operar em contingência quando o acesso à SEFAZ não for confiável.
