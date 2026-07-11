@@ -331,8 +331,11 @@ def build_notification_command(
 ) -> list[str]:
     bin_path = as_str(noticli_cfg.get("noticli_bin", "noticli"), "noticli_bin")
     sender = as_str(noticli_cfg.get("sender", "noMore404"), "sender")
-    recipient = as_str(notify_cfg.get("recipient"), "recipient")
-    channel = as_str(notify_cfg.get("channel"), "channel")
+    category_default = "FAIL" if status == "FAIL" else "SUCCESS"
+    priority_default = "HIGH" if status == "FAIL" else None
+    category = as_str(notify_cfg.get("category", category_default), "category")
+    priority_value = notify_cfg.get("priority", priority_default)
+    priority = as_str(priority_value, "priority") if priority_value else None
     title = render_template(as_str(notify_cfg.get("title", "{domain}"), "title"), {
         "domain": domain,
         "status": status,
@@ -349,15 +352,15 @@ def build_notification_command(
         "send",
         "--sender",
         sender,
-        "--recipient",
-        recipient,
-        "--channel",
-        channel,
+        "--category",
+        category,
         "--title",
         title,
         "--message",
         message,
     ]
+    if priority:
+        command += ["--priority", priority]
     config_path = noticli_cfg.get("noticli_config")
     if config_path:
         command[2:2] = ["--config", as_str(config_path, "noticli_config")]

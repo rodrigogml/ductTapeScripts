@@ -5,14 +5,13 @@ http_timeout_ms = 5000
 user_agent = "noMore404/1.0"
 
 [global.notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [global.notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -28,14 +27,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."assurity.com.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."assurity.com.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -63,14 +61,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."eRacers.com.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."eRacers.com.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -98,14 +95,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."laizagalvan.eng.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."laizagalvan.eng.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -133,14 +129,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."laveli.com.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."laveli.com.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -216,14 +211,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."rodrigogml.eng.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."rodrigogml.eng.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -251,14 +245,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."rogerio.adv.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."rogerio.adv.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -286,14 +279,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."talori.com.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."talori.com.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 
@@ -321,14 +313,13 @@ check_index_time = true
 check_redirects = true
 
 [jobs."bertolinoevargas.adv.br".notify.success]
-recipient = "ops-web"
-channel = "telegram"
+category = "SUCCESS"
 title = "{domain} OK"
 message = "{report}"
 
 [jobs."bertolinoevargas.adv.br".notify.error]
-recipient = "ops-web-alerts"
-channel = "telegram"
+category = "FAIL"
+priority = "HIGH"
 title = "{domain} FAIL"
 message = "{report}"
 

@@ -39,8 +39,8 @@ O script procura `noMore404.toml` na mesma pasta do executável. Use `--config` 
 1. Crie a árvore de produção versionada:
 
 ```bash
-sudo mkdir -p /opt/noMore404/releases/v2.0.0
-sudo ln -sfn /opt/noMore404/releases/v2.0.0 /opt/noMore404/current
+sudo mkdir -p /opt/noMore404/releases/v2.0.2
+sudo ln -sfn /opt/noMore404/releases/v2.0.2 /opt/noMore404/current
 ```
 
 2. Faça o build de validação:
@@ -65,11 +65,11 @@ tar -czf "/tmp/noMore404-night-build-${BUILD_ID}.tar.gz" \
 4. Desdobre o pacote na release versionada:
 
 ```bash
-sudo install -d /opt/noMore404/releases/v2.0.0
-sudo install -m 0755 noMore404.py /opt/noMore404/releases/v2.0.0/noMore404.py
-sudo install -m 0644 README.md /opt/noMore404/releases/v2.0.0/README.md
-sudo install -m 0644 noMore404.toml.model /opt/noMore404/releases/v2.0.0/noMore404.toml.model
-sudo ln -sfn /opt/noMore404/noMore404.toml /opt/noMore404/releases/v2.0.0/noMore404.toml
+sudo install -d /opt/noMore404/releases/v2.0.2
+sudo install -m 0755 noMore404.py /opt/noMore404/releases/v2.0.2/noMore404.py
+sudo install -m 0644 README.md /opt/noMore404/releases/v2.0.2/README.md
+sudo install -m 0644 noMore404.toml.model /opt/noMore404/releases/v2.0.2/noMore404.toml.model
+sudo ln -sfn /opt/noMore404/noMore404.toml /opt/noMore404/releases/v2.0.2/noMore404.toml
 ```
 
 5. Crie o arquivo real de configuração em `/opt/noMore404/noMore404.toml`.
@@ -120,6 +120,8 @@ O fluxo recomendado para um primeiro domínio é:
 
 - domínio principal em `primary_domain`;
 - aliases em `redirects`;
+- `category = "SUCCESS"` em notificações de sucesso;
+- `category = "FAIL"` e `priority = "HIGH"` em notificações de falha;
 - `check_http_200 = true`;
 - `check_http_to_https = true`;
 - `check_index_time = true`;
@@ -144,16 +146,18 @@ checks:
 
 O `noMore404` chama o NotiCLI como dependência externa.
 
-Não há alteração no projeto NotiCLI. O script apenas monta o comando com:
+O script monta o comando no modelo broadcast do NotiCLI v2:
 
 - `send`
 - `--sender`
-- `--recipient`
-- `--channel`
+- `--category`
 - `--title`
 - `--message`
+- `--priority`, somente quando configurado
 
-O `sender` recomendado para este projeto é `noMore404`. Se `global.noticli_config` não estiver definido, o script deixa o NotiCLI usar o padrão do sistema. Se esse campo existir, ele é passado como `--config`. O arquivo de configuração do NotiCLI deve continuar fora deste repositório e pode reutilizar a mesma base operacional usada por outros projetos, como `vaultGFS`.
+O `sender` recomendado para este projeto é `noMore404`. Para sucesso, use `category = "SUCCESS"` e deixe `priority` ausente para o NotiCLI assumir `NORMAL`. Para falha, use `category = "FAIL"` e `priority = "HIGH"`.
+
+Se `global.noticli_config` não estiver definido, o script deixa o NotiCLI usar o padrão do sistema. Se esse campo existir, ele é passado como `--config`. O arquivo de configuração do NotiCLI deve continuar fora deste repositório e pode reutilizar a mesma base operacional usada por outros projetos, como `vaultGFS`.
 Se o NotiCLI não tiver um arquivo padrão válido no host, a notificação falhará mesmo sem `--config`.
 
 ### Versionamento
