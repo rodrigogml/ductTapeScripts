@@ -27,6 +27,12 @@ Miniapp para checar disponibilidade, respostas HTTP, redirects e tempo de carga 
 
 - README interno: [noMore404/README.md](noMore404/README.md)
 
+## bis2Buster
+
+Monitor de cupons NFC-e do BIS2 para detectar acúmulo, fila atrasada e estados de falha relacionados à SEFAZ, com notificação via NotiCLI.
+
+- README interno: [bis2Buster/README.md](bis2Buster/README.md)
+
 ## wildflyNetworkQuarantine
 
 Mini-projeto para isolar o tráfego de saída do `wildfly` e forçar o BIS2 a operar em contingência quando o acesso à SEFAZ não for confiável.

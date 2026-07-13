@@ -1,0 +1,41 @@
+[global]
+noticli_bin = "noticli"
+sender = "bis2Buster"
+timezone = "America/Sao_Paulo"
+period_mode = "last_3_months"
+queue_age_hours = 3
+mysql_timeout_seconds = 10
+
+[global.notify.success]
+category = "SUCCESS"
+title = "{job} OK"
+message = "{report}"
+
+[global.notify.error]
+category = "FAIL"
+priority = "HIGH"
+title = "{job} FAIL"
+message = "{report}"
+
+[jobs."bis2-producao"]
+enabled = true
+host = "127.0.0.1"
+port = 3306
+database = "bis2"
+user = "bis2_readonly"
+password = "CHANGE_ME"
+
+# Opcional: sobrescreva a janela deste job.
+# data_inicio = "2026-01-01T00:00:00"
+# data_fim = "2026-01-02T00:00:00"
+
+[jobs."bis2-producao".notify.success]
+category = "SUCCESS"
+title = "{job} OK"
+message = "{report}"
+
+[jobs."bis2-producao".notify.error]
+category = "FAIL"
+priority = "HIGH"
+title = "{job} FAIL"
+message = "{report}"
