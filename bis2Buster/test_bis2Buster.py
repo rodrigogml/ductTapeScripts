@@ -145,12 +145,15 @@ class Bis2BusterTests(unittest.TestCase):
 
         self.assertEqual(
             report,
-            "bis2-producao FAIL\n"
-            "periodo: 2026-07-13 00:00:00 -> 2026-07-14 00:00:00\n"
-            "fila_limite: 2026-07-13 10:00:00\n"
-            "checks:\n"
-            "- Problemas na SEFAZ: ok (nenhum cupom encontrado)\n"
-            "- Cupons em Fila: fail (2 cupom(ns) encontrado(s))",
+            "BIS2 monitor falhou\n"
+            "\n"
+            "- Job: bis2-producao\n"
+            "- Status: FAIL\n"
+            "- Periodo: 2026-07-13 00:00:00 -> 2026-07-14 00:00:00\n"
+            "- Fila limite: 2026-07-13 10:00:00\n"
+            "- Checks:\n"
+            "  - Problemas na SEFAZ: ok (nenhum cupom encontrado)\n"
+            "  - Cupons em Fila: fail (2 cupom(ns) encontrado(s))",
         )
 
     def test_build_notification_command_omits_success_priority(self) -> None:

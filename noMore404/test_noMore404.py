@@ -46,7 +46,13 @@ class NoMore404Tests(unittest.TestCase):
 
         self.assertEqual(
             report,
-            "example.com FAIL\nchecks:\n- 200: ok (ok)\n- index: fail (fail 1800ms>1500ms)",
+            "Website monitor falhou\n"
+            "\n"
+            "- Dominio: example.com\n"
+            "- Status: FAIL\n"
+            "- Checks:\n"
+            "  - 200: ok (ok)\n"
+            "  - index: fail (fail 1800ms>1500ms)",
         )
 
     def test_build_notification_command_omits_config_when_not_set(self) -> None:

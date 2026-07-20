@@ -134,12 +134,15 @@ Cada domínio gera um relatório único com status curto por check.
 Exemplo:
 
 ```text
-xpto.com.br FAIL
-checks:
-- 200: ok (ok)
-- www.xpto.com.br->xpto.com.br: ok (ok)
-- http->https: fail (fail(https://xpto.com.br:0))
-- index: ok (ok 842ms)
+Website monitor falhou
+
+- Dominio: xpto.com.br
+- Status: FAIL
+- Checks:
+  - 200: ok (ok)
+  - www.xpto.com.br->xpto.com.br: ok (ok)
+  - http->https: fail (fail(https://xpto.com.br:0))
+  - index: ok (ok 842ms)
 ```
 
 ### NotiCLI

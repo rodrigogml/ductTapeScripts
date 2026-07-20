@@ -104,14 +104,17 @@ O script nao soma categorias diferentes. Cada categoria aparece em linha propria
 Exemplo de relatorio:
 
 ```text
-bis2-producao FAIL
-periodo: 2026-07-13 00:00:00 -> 2026-07-14 00:00:00
-fila_limite: 2026-07-13 12:30:00
-checks:
-- Problemas na SEFAZ: ok (nenhum cupom encontrado)
-- Cupons em Fila: fail (2 cupom(ns) encontrado(s))
-- SEFAZ Offline (Direto): ok (nenhum cupom encontrado)
-- SEFAZ Offline (Corrigidos): ok (nenhum cupom encontrado)
+BIS2 monitor falhou
+
+- Job: bis2-producao
+- Status: FAIL
+- Periodo: 2026-07-13 00:00:00 -> 2026-07-14 00:00:00
+- Fila limite: 2026-07-13 12:30:00
+- Checks:
+  - Problemas na SEFAZ: ok (nenhum cupom encontrado)
+  - Cupons em Fila: fail (2 cupom(ns) encontrado(s))
+  - SEFAZ Offline (Direto): ok (nenhum cupom encontrado)
+  - SEFAZ Offline (Corrigidos): ok (nenhum cupom encontrado)
 ```
 
 ### NotiCLI

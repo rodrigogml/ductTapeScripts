@@ -272,14 +272,17 @@ def evaluate_counts(counts: dict[str, int]) -> list[CheckResult]:
 def format_report(name: str, checks: list[CheckResult], ok: bool, window: TimeWindow) -> str:
     status = "OK" if ok else "FAIL"
     parts = [
-        f"{name} {status}",
-        f"periodo: {mysql_datetime(window.start)} -> {mysql_datetime(window.end)}",
-        f"fila_limite: {mysql_datetime(window.queue_limit)}",
-        "checks:",
+        "BIS2 monitor OK" if ok else "BIS2 monitor falhou",
+        "",
+        f"- Job: {name}",
+        f"- Status: {status}",
+        f"- Periodo: {mysql_datetime(window.start)} -> {mysql_datetime(window.end)}",
+        f"- Fila limite: {mysql_datetime(window.queue_limit)}",
+        "- Checks:",
     ]
     for item in checks:
         mark = "ok" if item.ok else "fail"
-        parts.append(f"- {item.label}: {mark} ({item.detail})")
+        parts.append(f"  - {item.label}: {mark} ({item.detail})")
     return "\n".join(parts)
 
 
