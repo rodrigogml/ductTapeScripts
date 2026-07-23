@@ -3,3 +3,8 @@ __pycache__/
 .pytest_cache/
 noMore404/noMore404.toml
 bis2Buster/bis2Buster.toml
+IPaparazzi/IPaparazzi.toml
+IPaparazzi/IPaparazzi.state.json
+IPaparazzi/.IPaparazzi.state.json.*
+IPaparazzi/IPaparazzi.lock
+IPaparazzi/IPaparazzi.log*

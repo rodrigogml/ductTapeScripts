@@ -1,0 +1,6 @@
+IPaparazzi/*.py text eol=lf
+IPaparazzi/*.sh text eol=lf
+IPaparazzi/*.ps1 text eol=lf
+IPaparazzi/*.toml.model text eol=lf
+IPaparazzi/*.md text eol=lf
+IPaparazzi/docs/**/*.md text eol=lf

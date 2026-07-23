@@ -27,6 +27,12 @@ Miniapp para checar disponibilidade, respostas HTTP, redirects e tempo de carga 
 
 - README interno: [noMore404/README.md](noMore404/README.md)
 
+## IPaparazzi
+
+Monitor multiplataforma de IPv4 público que mantém registros DNS `A` sincronizados na Cloudflare, com consenso entre fontes externas, cache local, logs rotativos e notificação via NotiCLI.
+
+- README interno: [IPaparazzi/README.md](IPaparazzi/README.md)
+
 ## bis2Buster
 
 Monitor de cupons NFC-e do BIS2 para detectar acúmulo, fila atrasada e estados de falha relacionados à SEFAZ, com notificação via NotiCLI.
