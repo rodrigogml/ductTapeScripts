@@ -144,7 +144,7 @@ Eventos possíveis:
 enabled = true
 noticli_bin = "noticli"
 sender = "IPaparazzi"
-# noticli_config = "C:/caminho/para/noticli.toml"
+# noticli_config = "C:/caminho/para/noticli.json"
 
 [global.notifications.error]
 category = "FAIL"
@@ -154,6 +154,11 @@ message = "{report}"
 ```
 
 O placeholder `{report}` contém o resumo da execução. O placeholder `{event}` contém o nome do evento em maiúsculas.
+
+O relatório segue o mesmo formato operacional dos demais monitores: cabeçalho, status,
+IPv4 público, fontes, registros DNS e erros são escritos em linhas separadas. Eventos
+`changed` e `recovered` usam a prioridade `NORMAL` padrão do NotiCLI. Eventos `error`
+usam prioridade `HIGH`, incluindo ausência de consenso e falhas em registros DNS.
 
 ## Uso manual
 

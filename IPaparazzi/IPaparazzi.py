@@ -851,7 +851,13 @@ def reconcile_records(
 
 
 def format_report(summary: RunSummary) -> str:
-    lines = ["IPaparazzi execution", "", f"- Public IPv4: {summary.public_ip or 'unavailable'}"]
+    status = "FAIL" if summary.errors else "OK"
+    lines = [
+        "IPaparazzi monitor falhou" if summary.errors else "IPaparazzi monitor OK",
+        "",
+        f"- Status: {status}",
+        f"- Public IPv4: {summary.public_ip or 'unavailable'}",
+    ]
     lines.append("- Sources:")
     for source in summary.source_results:
         value = source.ip if source.ip is not None else f"fail ({source.error})"

@@ -14,7 +14,7 @@ log_backup_count = 5
 enabled = true
 noticli_bin = "noticli"
 sender = "IPaparazzi"
-# noticli_config = "C:/caminho/para/noticli.toml"
+# noticli_config = "C:/caminho/para/noticli.json"
 
 [global.notifications.changed]
 category = "SUCCESS"

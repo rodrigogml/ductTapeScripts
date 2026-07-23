@@ -620,6 +620,44 @@ class CloudflareTests(unittest.TestCase):
 
 
 class NotificationTests(unittest.TestCase):
+    def test_success_report_uses_one_status_or_result_per_line(self) -> None:
+        summary = MODULE.RunSummary(
+            VALID_IP,
+            (MODULE.SourceResult("cloudflare", VALID_IP, None),),
+            (MODULE.RecordOutcome("key", "account", "home.example.com", "updated", "done"),),
+        )
+
+        report = MODULE.format_report(summary)
+
+        self.assertEqual(
+            report.splitlines(),
+            [
+                "IPaparazzi monitor OK",
+                "",
+                "- Status: OK",
+                f"- Public IPv4: {VALID_IP}",
+                "- Sources:",
+                f"  - cloudflare: {VALID_IP}",
+                "- DNS records:",
+                "  - account/home.example.com: updated (done)",
+            ],
+        )
+
+    def test_error_report_has_failure_status_and_separate_error_lines(self) -> None:
+        summary = MODULE.RunSummary(
+            None,
+            (MODULE.SourceResult("cloudflare", None, "timeout"),),
+            (),
+            ("no IPv4 consensus", "provider unavailable"),
+        )
+
+        report = MODULE.format_report(summary)
+
+        self.assertEqual(report.splitlines()[0], "IPaparazzi monitor falhou")
+        self.assertIn("- Status: FAIL", report.splitlines())
+        self.assertIn("  - no IPv4 consensus", report.splitlines())
+        self.assertIn("  - provider unavailable", report.splitlines())
+
     def test_error_has_priority_over_change_and_recovery(self) -> None:
         summary = MODULE.RunSummary(
             VALID_IP,
@@ -655,6 +693,15 @@ class NotificationTests(unittest.TestCase):
 
             self.assertNotIn("secret-token", command)
             self.assertIn("HIGH", command)
+
+    def test_normal_events_use_noticli_default_normal_priority(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            config = make_config(Path(directory)).notifications
+
+            command = MODULE.build_notification_command(config, "changed", "updated")
+
+            self.assertNotIn("--priority", command)
+            self.assertEqual(config.sender, "IPaparazzi")
 
     def test_missing_noticli_is_reported_as_process_failure(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
